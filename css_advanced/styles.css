@@ -1,0 +1,1073 @@
+/* ========================= */
+
+/* 0. ROOT & GLOBAL STYLES */
+
+/* ========================= */
+
+
+:root {
+
+    /* Colors */
+
+    --color-dark-blue: #071629;
+
+    --color-accent-purple: #C271FF;
+
+    --color-light-purple: #9A50FD;
+
+    --color-text-white: #FFFFFF;
+
+    --color-text-gray: #B9B0A3;
+
+    --color-bg-light: #F8F8F8; /* Used for non-dark sections */
+
+
+    /* Fonts */
+
+    --font-main: 'Source Sans Pro', sans-serif; 
+
+}
+
+
+/* Base reset/styling */
+
+html, body {
+
+    margin: 0;
+
+    padding: 0;
+
+    width: 100%;
+
+    position: relative; 
+
+}
+
+
+body {
+
+    font-family: var(--font-main);
+
+    line-height: 1.5;
+
+    color: #4A4A4A; 
+
+}
+
+
+/* Ensure images scale correctly */
+
+img {
+
+    max-width: 100%;
+
+    height: auto;
+
+}
+
+
+/* Basic button styling */
+
+button {
+
+    background-color: var(--color-accent-purple);
+
+    color: var(--color-text-white);
+
+    border: none;
+
+    border-radius: 22px;
+
+    padding: 10px 30px;
+
+    text-transform: uppercase;
+
+    font-weight: 600;
+
+    font-size: 14px;
+
+    cursor: pointer;
+
+    
+
+    /* Centering */
+
+    display: block;
+
+    margin: 0 auto;
+
+    
+
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+
+    transition: opacity 0.3s;
+
+}
+
+
+button:hover {
+
+    opacity: 0.8;
+
+}
+
+
+/* Global Section Styling (for layout/spacing) */
+
+section {
+
+    padding: 80px 0;
+
+}
+
+
+/* 🎯 FIX 1: Fixes "Learn" Casing, Color, AND SIZE using !important for maximum specificity */
+
+.purple-text {
+
+    color: var(--color-accent-purple) !important;
+
+    text-transform: none !important; 
+
+    font-size: inherit !important; /* Forces it to use the parent <h2> size (32px) */
+
+    font-weight: 700 !important; 
+
+}
+
+
+
+/* ========================= */
+
+/* 1. HEADER & NAVIGATION */
+
+/* ========================= */
+
+
+header {
+
+    position: absolute; 
+
+    top: 0;           
+
+    left: 0;          
+
+    width: 100%;      
+
+    z-index: 1000;    
+
+    padding: 10px 40px; 
+
+}
+
+
+nav {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    max-width: 1000px;
+
+    margin: 0 auto;
+
+}
+
+
+nav ul {
+
+    list-style: none;
+
+    padding: 0;
+
+    margin: 0;
+
+    display: flex;
+
+    gap: 30px;
+
+}
+
+
+nav a {
+
+    text-decoration: none;
+
+    color: var(--color-text-white); 
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    opacity: 1;
+
+    transition: opacity 0.3s;
+
+}
+
+
+nav a:hover {
+
+    color: var(--color-accent-purple);
+
+    opacity: 1;
+
+}
+
+
+/* ========================= */
+
+/* 2. HERO SECTION */
+
+/* ========================= */
+
+
+/* Target the first section, which holds the Hero and Teachers */
+
+main section:first-of-type {
+
+    background-image: 
+
+        linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+
+        url('./images/Object.png');
+
+    
+
+    background-size: cover;
+
+    background-position: top center;
+
+    color: var(--color-text-white);
+
+    text-align: center;
+
+    padding: 180px 20px 0; 
+
+}
+
+
+/* Target the first div inside the hero section for the main text */
+
+main section:first-of-type > div:first-of-type {
+
+    max-width: 700px;
+
+    margin: 0 auto 100px;
+
+    padding-bottom: 50px;
+
+}
+
+
+main section:first-of-type h1 {
+
+    font-size: 120px;
+
+    font-weight: 700;
+
+    margin: 0 0 10px 0;
+
+}
+
+
+main section:first-of-type span {
+
+    font-size: 16px;
+
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+    margin: 0 15px;
+
+}
+
+
+main section:first-of-type button {
+
+    margin-top: 40px;  
+
+}
+
+
+/* ========================= */
+
+/* 3. TEACHERS SECTION */
+
+/* ========================= */
+
+
+/* Teachers container */
+
+main section:first-of-type > div:nth-of-type(2) {
+
+    background-color: transparent; 
+
+    color: var(--color-text-white);
+
+    padding: 50px 20px 100px;
+
+    filter: none;
+
+}
+
+
+main section:first-of-type > div:nth-of-type(2) h2 {
+
+    font-size: 32px;
+
+    font-weight: 300;
+
+    margin-bottom: 70px;
+
+    text-transform: none; /* ensures 'from pros' isn't capped */
+
+}
+
+/* Note: The color, size, and casing for 'Learn' is now handled by the .purple-text rule above. */
+
+
+/* Teacher cards container */
+
+main section:first-of-type > div:nth-of-type(2) > div {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 30px;
+
+    max-width: 1000px;
+
+    margin: 0 auto;
+
+}
+
+
+/* Individual teacher card */
+
+main section:first-of-type > div:nth-of-type(2) > div > div {
+
+    flex-basis: 25%;
+
+    display: flex; 
+
+    flex-direction: column;
+
+    align-items: center; 
+
+}
+
+
+main section:first-of-type img {
+
+    border-radius: 50%;
+
+    width: 150px;
+
+    height: 150px;
+
+    object-fit: cover;
+
+    margin-bottom: 10px;
+
+}
+
+
+main section:first-of-type h3 {
+
+    margin: 10px 0 5px;
+
+    font-size: 18px;
+
+}
+
+
+main section:first-of-type p {
+
+    font-style: italic;
+
+    font-size: 14px;
+
+    color: var(--color-text-gray);
+
+    margin: 0;
+
+}
+
+
+
+/* ========================= */
+
+/* 4. TESTIMONIAL SECTION */
+
+/* ========================= */
+
+
+/* 🎯 FIX: Removing max-width and margin: auto to make it span full screen width */
+
+main section:nth-of-type(2) {
+
+    background-color: var(--color-accent-purple); 
+
+    color: var(--color-text-white);
+
+    
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 50px;
+
+    
+
+    padding: 80px 20px;
+
+    /* REMOVED: max-width: 1000px; */
+
+    /* REMOVED: margin: 0 auto; */
+
+    width: 100%; /* Ensure it spans the full width */
+
+    box-sizing: border-box; /* Include padding in the element's total width */
+
+} 
+
+
+/* To ensure the content inside remains centered and readable, 
+
+   we will now wrap the inner content (the image and text) in a container.
+
+   Since you cannot change the HTML, we'll apply a max-width to the testimonial image and the testimonial text container */
+
+
+main section:nth-of-type(2) > div:nth-of-type(2) {
+
+    /* Styles the container holding the quote and person details */
+
+    max-width: 600px; /* Limits the quote width */
+
+}
+
+
+main section:nth-of-type(2) img {
+
+    border-radius: 50%;
+
+    width: 160px;
+
+    height: 160px;
+
+    object-fit: cover;
+
+    flex-shrink: 0; 
+
+}
+
+
+main section:nth-of-type(2) blockquote {
+
+    font-style: italic;
+
+    font-size: 20px;
+
+    margin: 0 0 20px 0;
+
+    font-weight: 300;
+
+}
+
+
+main section:nth-of-type(2) h3 {
+
+    margin: 0;
+
+    font-size: 18px;
+
+    font-weight: 700;
+
+}
+
+
+main section:nth-of-type(2) p {
+
+    margin: 0;
+
+    font-size: 16px;
+
+    font-style: normal;
+
+    font-weight: 400;
+
+}
+
+/* ========================================= */
+/* /* ========================================= */
+/* ========================================= */
+/* ========================================= */
+/* ========================================= */
+/* 5. POPULAR TUTORIALS SECTION (FINAL, ABSOLUTE THUMBNAIL FIX) */
+/* ========================================= */
+
+main section:nth-of-type(3) {
+    background-color: var(--color-bg-light); 
+    text-align: center;
+    padding: 80px 20px; 
+}
+
+/* 1. Tutorials Container (The Row) */
+.tutorials-container {
+    display: flex; 
+    justify-content: center; 
+    gap: 30px; 
+    max-width: 1100px; 
+    margin: 0 auto; 
+    flex-wrap: nowrap; 
+}
+
+/* 2. Individual Card Styling */
+.tutorial-card {
+    display: flex; 
+    flex-direction: column; 
+    
+    flex: 0 0 calc(25% - 22.5px);
+    background-color: var(--color-text-white);
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: left; 
+    padding: 0; 
+    position: static; 
+    overflow: hidden; 
+}
+
+
+/* --- 1. TUTORIAL THUMBNAIL (BIG RECTANGLE IMAGE & PLAY BUTTON) --- */
+
+.tutorial-thumbnail {
+    position: relative; 
+    display: block; 
+    width: 100% !important; /* CRITICAL: Force the wrapper to be 100% */
+    height: auto !important; /* CRITICAL: Allow height to adjust */
+    overflow: hidden; 
+    margin-bottom: 10px; 
+    flex-shrink: 0; 
+}
+
+/* 3. TARGETS: THE BIG TUTORIAL THUMBNAIL (CRITICAL SIZE FIXES) */
+/* Using multiple selectors and !important to guarantee the size */
+.tutorial-thumbnail > img:first-child,
+.tutorial-card .tutorial-thumbnail img:first-child { 
+    width: 100% !important; 
+    height: auto !important;
+    max-height: 180px !important; 
+    min-height: 120px !important; /* Ensure it stays rectangular */
+    object-fit: cover !important;
+    border-radius: 5px 5px 0 0 !important;
+    margin-bottom: 0 !important; 
+    max-width: 100% !important; 
+}
+
+/* 3a. Style and position the play button */
+.play-button {
+    position: absolute;
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    width: 80px; 
+    height: auto; 
+    z-index: 5;
+    cursor: pointer;
+}
+
+/* --- 2. AUTHOR STYLING (The part that is working) --- */
+
+.tutorial-card h3,
+.tutorial-card p,
+.tutorial-card > div {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.tutorial-card > div:nth-of-type(1) {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    margin-bottom: 5px; 
+}
+
+/* 4a. NUCLEAR FIX (Retained for guaranteed small teacher image) */
+.tutorial-card h4 img,
+.tutorial-card h4 + img,
+.tutorial-card > div:nth-child(4) img,
+.tutorial-card > div:nth-of-type(1) img { 
+    width: 30px !important; 
+    height: 30px !important;
+    border-radius: 50% !important; 
+    object-fit: cover !important;
+    margin-right: 10px;
+    margin-bottom: 0;
+    padding: 0;
+    flex-shrink: 0 !important;
+}
+
+/* 5. Rating/Duration Container */
+.rating-duration {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    margin-top: 10px; 
+    margin-bottom: 10px;
+    padding-left: 10px; 
+    padding-right: 10px;
+}
+
+/* Stars Image */
+.rating-duration img {
+    width: 70px; 
+    height: 12px;
+}
+
+/* Duration Styling */
+.rating-duration p {
+    font-size: 14px;
+    color: #4A4A4A;
+    margin: 0;
+    padding-right: 0; 
+}
+
+/* --- UNIVERSAL IMAGE SAFETY NET (Retained) --- */
+/* This is a general safety rule to prevent unexpected sizing on all images in the card */
+.tutorial-card img {
+    width: auto !important; 
+    height: auto !important;
+    max-width: none !important;
+}
+
+/* Re-apply correct size for the main rectangular thumbnail to ensure it wins */
+.tutorial-thumbnail > img:first-child { 
+    width: 100% !important;
+    max-height: 180px !important; 
+}/* 6. FREE MEMBERSHIP SECTION */
+/* ========================= */
+
+.free-membership-section {
+    background-color: #0d0c1c; /* Dark background */
+    color: var(--color-text-white); /* Ensures all text is white by default */
+    text-align: center; /* Centers the h2, button, and general text */
+    padding: 80px 20px;
+}
+
+
+.free-membership-section h2 {
+    font-size: 32px;
+    font-weight: 300;
+    margin-bottom: 70px;
+    color: var(--color-text-white);
+    text-transform: none; 
+}
+
+/* New/Updated Rule: Target the 'Free' text to make it purple */
+.free-membership-section h2 .purple-text-bold {
+    color: var(--color-accent-purple);
+    font-weight: 700; /* Optional: Make the purple word bold */
+}
+
+
+/* Membership Cards Container (The Row) */
+.membership-cards-container {
+    display: flex;
+    justify-content: center; 
+    gap: 30px; 
+    max-width: 1100px; 
+    margin: 0 auto 50px auto; 
+    flex-wrap: nowrap;
+}
+
+
+/* Individual Membership Card */
+.membership-card {
+    flex: 0 0 calc(25% - 22.5px); 
+    text-align: center;
+}
+
+
+.membership-card img {
+    width: 44px; 
+    height: 44px;
+    margin-bottom: 20px;
+}
+
+
+.membership-card h3 {
+    font-size: 18px;
+    font-weight: 700;
+    margin: 0 0 10px 0;
+    /* CRITICAL: Ensure h3 is white */
+    color: var(--color-text-white); 
+}
+
+
+.membership-card p {
+    font-size: 14px;
+    font-weight: 300;
+    margin: 0;
+    /* CRITICAL: Ensure p is visible (using white with opacity) */
+    color: rgba(255, 255, 255, 0.7); 
+}
+
+
+/* Button Styling */
+.free-membership-section button {
+    background-color: var(--color-accent-purple); 
+    color: var(--color-text-white);
+    border: none;
+    border-radius: 22px;
+    padding: 10px 30px;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: opacity 0.3s;
+}
+
+.free-membership-section button:hover {
+    opacity: 0.9;
+}
+/* 7. F.A.Q. SECTION (Forcing 2x2 Layout with Float Reset) */
+
+/* ========================= */
+
+
+.faq-section { 
+
+    background-color: var(--color-bg-light); 
+
+    text-align: center;
+
+    padding: 80px 20px;
+
+}
+
+
+.faq-section h2 {
+
+    font-size: 32px;
+
+    font-weight: 300;
+
+    color: #000000;
+
+    margin-bottom: 70px;
+
+    text-transform: none; 
+
+}
+
+
+/* 1. F.A.Q. Container: The Wrapper */
+
+.faq-container {
+
+    max-width: 900px !important; /* Set container width */
+
+    margin: 0 auto !important; /* Center the container */
+
+    
+
+    /* CRITICAL: Clearfix hack to contain the floated items */
+
+    overflow: hidden !important; 
+
+    
+
+    /* CRITICAL RESET: Make sure no display property interferes */
+
+    display: block !important;
+
+    text-align: left !important;
+
+    padding: 0 10px; /* Small inner padding */
+
+}
+
+
+/* 2. Individual Question/Answer Block - The Children */
+
+.faq-container .faq-item { 
+
+    /* 💥 CRITICAL: Float and define size manually */
+
+    float: left !important;
+
+    width: 48% !important; /* CRITICAL: Must be less than 50% */
+
+    margin-right: 4% !important; /* Gap between columns (48 + 48 + 4 = 100) */
+
+    margin-bottom: 50px !important; /* Space between rows */
+
+    
+
+    /* Reset everything else */
+
+    display: block !important;
+
+    box-sizing: border-box !important;
+
+    flex: none !important;
+
+}
+
+
+/* Remove margin from the second item in each row (Item 2 and 4) */
+
+/* This is necessary for perfect alignment */
+
+.faq-container .faq-item:nth-child(2n) {
+
+    margin-right: 0 !important;
+
+}
+
+
+/* Styling for content within the items */
+
+.faq-item h3 {
+
+    font-size: 16px;
+
+    font-weight: 700;
+
+    color: #000000;
+
+    margin-top: 0;
+
+    margin-bottom: 20px;
+
+}
+
+
+.faq-item p {
+
+    font-size: 14px;
+
+    font-weight: 300;
+
+    color: #4A4A4A;
+
+    margin: 0;
+
+    word-wrap: break-word; 
+
+}/* ========================= */
+
+/* 7. F.A.Q. SECTION (RESTORED 2x2 Layout using Float) */
+
+/* ========================= */
+
+
+.faq-section { 
+
+    background-color: var(--color-bg-light); 
+
+    text-align: center;
+
+    padding: 80px 20px;
+
+}
+
+
+.faq-section h2 {
+
+    font-size: 32px;
+
+    font-weight: 300;
+
+    color: #000000;
+
+    margin-bottom: 70px;
+
+    text-transform: none; 
+
+}
+
+
+/* 1. F.A.Q. Container: The Wrapper */
+
+.faq-container {
+
+    max-width: 900px !important; /* Set container width */
+
+    margin: 0 auto !important; /* Center the container */
+
+    
+
+    /* CRITICAL: Clearfix hack to contain the floated items */
+
+    overflow: hidden !important; 
+
+    
+
+    /* CRITICAL RESET: Make sure no display property interferes */
+
+    display: block !important;
+
+    text-align: left !important;
+
+    padding: 0 10px; /* Small inner padding */
+
+}
+
+
+/* 2. Individual Question/Answer Block - The Children */
+
+.faq-container .faq-item { 
+
+    /* 💥 CRITICAL: Float and define size manually */
+
+    float: left !important;
+
+    width: 48% !important; /* CRITICAL: Must be less than 50% */
+
+    margin-right: 4% !important; /* Gap between columns (48 + 48 + 4 = 100) */
+
+    margin-bottom: 50px !important; /* Space between rows */
+
+    
+
+    /* Reset everything else */
+
+    display: block !important;
+
+    box-sizing: border-box !important;
+
+    flex: none !important;
+
+}
+
+
+/* Remove margin from the second item in each row (Item 2 and 4) */
+
+.faq-container .faq-item:nth-child(2n) {
+
+    margin-right: 0 !important;
+
+}
+
+
+/* Styling for content within the items */
+
+.faq-item h3 {
+
+    font-size: 16px;
+
+    font-weight: 700;
+
+    color: #000000;
+
+    margin-top: 0;
+
+    margin-bottom: 20px;
+
+}
+
+
+.faq-item p {
+
+    font-size: 14px;
+
+    font-weight: 300;
+
+    color: #4A4A4A;
+
+    margin: 0;
+
+    word-wrap: break-word; 
+
+}
+/* ========================= */
+
+/* 8. FOOTER (Nuclear Fix using IDs) */
+
+/* ========================= */
+
+
+footer {
+
+    background-color: var(--color-dark-blue) !important; /* #071629 */
+
+    color: var(--color-text-white);
+
+    padding: 30px 20px;
+
+}
+
+
+/* 1. Container for Logo (Left) and Icons (Right) - Targets the SECTION */
+
+footer > section {
+
+    display: flex !important;
+
+    justify-content: space-between !important; /* Pushes elements apart */
+
+    align-items: center !important;
+
+    
+
+    max-width: 1000px !important;
+
+    margin: 0 auto !important;
+
+    padding: 0 0 20px 0 !important;
+
+    
+
+    width: 100% !important;
+
+}
+
+
+footer img {
+
+    width: 100px !important;  
+
+    height: auto !important;
+
+}
+
+
+/* 2. Social Icons Container (Right) - Targets the ID */
+
+#social-icons-fix {
+
+    display: flex !important;
+
+    gap: 5px !important;
+
+    font-size: 16px !important;
+
+}
+
+
+/* 3. Copyright Text (Centered Below) - GUARANTEED FIX */
+p#copyright-fix {
+    /* Set the element to block to allow margin: auto to work */
+    display: block !important;
+    
+    /* Center the text within the block */
+    text-align: center !important; 
+    
+    /* Center the block itself within the parent container */
+    margin: 0 auto !important; 
+    
+    /* Other styling you had */
+    font-size: 12px !important;
+    color: var(--color-text-gray) !important;
+    max-width: 1000px !important; 
+}
